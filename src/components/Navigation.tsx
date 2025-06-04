@@ -53,7 +53,10 @@ export default function Navigation({ user, onAuth, onLogout, onShowAuthModal, on
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#gallery" className="text-gray-300 hover:text-pink-500 transition-colors font-medium">
+              <a href="/" className="text-white hover:text-pink-400 transition-colors">
+                Home
+              </a>
+              <a href="/gallery" className="text-white hover:text-pink-400 transition-colors">
                 Gallery
               </a>
               <a href="#style" className="text-gray-300 hover:text-pink-500 transition-colors font-medium">
@@ -175,17 +178,22 @@ export default function Navigation({ user, onAuth, onLogout, onShowAuthModal, on
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900 rounded-lg mt-2 border border-gray-700">
-              <a
-                href="#gallery"
-                className="block text-gray-300 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a href="/" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
+                Home
+              </a>
+              <a href="/gallery" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
                 Gallery
+              </a>
+              <a href="#pricing" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
+                Pricing
+              </a>
+              <a href="#contact" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
+                Contact
               </a>
               <a
                 href="#style"
-                className="block text-gray-300 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors"
+                className="text-gray-300 hover:text-pink-500 px-3 py-2 rounded-md font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Style
