@@ -2,186 +2,188 @@
 import React, { useState } from 'react';
 import { useParams } from 'next/navigation';
 import Navigation from '@/components/Navigation';
-import { Calendar, Clock, Eye, Heart, User, Share2, BookmarkPlus, ArrowLeft, ArrowRight, Tag, MessageCircle, ThumbsUp, ChevronRight, Copy, Facebook, Twitter, Linkedin, Download, Star } from 'lucide-react';
+import { Calendar, Clock, Eye, Heart, User, Share2, BookmarkPlus, ArrowLeft, ArrowRight, Tag, ChevronRight, Copy, Facebook, Twitter, Linkedin, Star } from 'lucide-react';
 
-// Mock article data - will be replaced with real CMS
+// Mock article data
 const mockArticle = {
-  id: 1,
-  slug: 'ultimate-ai-fantasy-art-guide',
-  title: 'Ultimate Guide to AI Fantasy Art: From Prompts to Masterpieces',
-  excerpt: 'Discover the secrets of creating breathtaking fantasy art using AI. Learn advanced prompting techniques, composition secrets, and post-processing tips that will transform your creative workflow.',
-  content: `# The Ultimate Guide to AI Fantasy Art
+  id: 2,
+  slug: 'cyberpunk-fashion-guide-2025',
+  title: 'Get the Cyberpunk Look: Fashion Guide for Real Life',
+  excerpt: 'Transform AI cyberpunk aesthetics into wearable fashion with our curated shopping guide and styling tips that bring the future to your wardrobe.',
+  content: `# Get the Cyberpunk Look: Fashion Guide for Real Life
 
 ## Introduction
 
-Welcome to the most comprehensive guide on creating stunning fantasy art using AI tools. In this guide, we'll explore advanced techniques, prompting strategies, and post-processing methods that will elevate your digital art to professional levels.
+The cyberpunk aesthetic has exploded in popularity, transforming from science fiction concept art into a real-world fashion movement. This comprehensive guide will show you how to achieve the cyberpunk look while remaining practical for everyday wear.
 
-## Chapter 1: Understanding AI Art Generation
+## Key Cyberpunk Fashion Elements
 
-AI art generation has revolutionized the creative process, allowing artists to explore new realms of possibility. The key to mastering AI fantasy art lies in understanding how to communicate effectively with AI models.
+### 1. Color Palette
+- **Neon Colors**: Electric blue, hot pink, acid green
+- **Base Colors**: Black, dark gray, metallic silver
+- **Accent Colors**: Chrome, holographic materials
 
-### Key Concepts:
-- **Prompt Engineering**: Crafting detailed, specific prompts
-- **Style Transfer**: Applying artistic styles to your creations
-- **Composition Rules**: Understanding visual hierarchy and balance
+### 2. Essential Pieces
 
-## Chapter 2: Advanced Prompting Techniques
+#### Outerwear
+- **Leather or Faux Leather Jackets**: The cornerstone of cyberpunk style
+- **Reflective Materials**: Holographic or metallic finishes
+- **Asymmetrical Cuts**: Unique silhouettes that break traditional fashion rules
 
-The art of prompting is crucial for achieving desired results. Here are proven techniques:
+#### Bottoms
+- **Tech Pants**: Cargo pants with multiple pockets and straps
+- **Leather Pants**: Fitted or loose, in black or metallic
+- **Distressed Jeans**: With neon accents or patches
 
-1. **Descriptive Layering**: Build your prompts in layers of detail
-2. **Style References**: Use specific artist names and art movements
-3. **Technical Parameters**: Control aspect ratios, quality, and styling
+### 3. Accessories That Matter
 
-### Example Prompts:
-- "Epic fantasy landscape, floating islands, mystical fog, golden hour lighting, by Greg Rutkowski, digital painting, 4K, ultra detailed"
-- "Ethereal elven warrior, flowing robes, magical staff, forest background, soft lighting, Renaissance style, oil painting effect"
+#### Tech-Inspired Jewelry
+- LED accessories that actually light up
+- Circuit board patterns
+- Geometric designs in metal
 
-## Chapter 3: Post-Processing Magic
+#### Footwear
+- **Platform Boots**: Combat boots with chunky soles
+- **LED Sneakers**: Shoes with built-in lighting
+- **Metallic Finishes**: Chrome or holographic materials
 
-Raw AI output is just the beginning. Professional post-processing techniques include:
+## Shopping Guide: Where to Buy
 
-- **Color Grading**: Enhancing mood and atmosphere
-- **Detail Enhancement**: Sharpening and texture work
-- **Composition Adjustments**: Cropping and framing
-- **Effect Layering**: Adding magical elements and lighting
+### High Street Options
+1. **Zara**: Tech-wear inspired pieces
+2. **H&M**: Affordable cyberpunk accessories
+3. **ASOS**: Wide selection of alternative fashion
 
-## Chapter 4: Building Your Fantasy Art Portfolio
+### Specialized Brands
+1. **Cyberdog**: Original rave and cyber fashion
+2. **Killstar**: Dark alternative fashion
+3. **Disturbia**: Gothic and cyber clothing
 
-Creating a cohesive portfolio requires:
+### DIY Modifications
+- Add LED strips to existing clothing
+- Apply holographic tape to accessories
+- Customize with neon paint or patches
 
-1. **Consistent Style**: Develop your unique artistic voice
-2. **Diverse Subjects**: Fantasy creatures, landscapes, characters
-3. **Technical Excellence**: High resolution, proper composition
-4. **Storytelling**: Each piece should tell a story
+## Styling Tips for Different Occasions
+
+### Everyday Cyberpunk
+- Start with black basics
+- Add one neon accent piece
+- Include subtle tech accessories
+
+### Full Cyber Look
+- Layer metallic and leather pieces
+- Multiple LED accessories
+- Bold makeup with neon colors
+
+## Makeup and Hair
+
+### Cyberpunk Makeup
+- **Eyes**: Electric blue or pink eyeshadow
+- **Lips**: Metallic or matte black lipstick
+- **Face**: Geometric patterns with face paint
+
+### Hair Styling
+- **Colors**: Electric blue, pink, or silver
+- **Cuts**: Asymmetrical, undercuts, or shaved patterns
+- **Accessories**: LED hair clips or metallic hair ties
+
+## Budget-Friendly Cyberpunk Style
+
+### Under $50
+- Black cargo pants: $25
+- Neon accessories: $15
+- LED jewelry: $10
+
+### Under $100
+- Faux leather jacket: $60
+- Platform boots: $40
+
+### Under $200
+- Complete cyberpunk outfit with quality pieces
 
 ## Conclusion
 
-Mastering AI fantasy art is a journey of continuous learning and experimentation. With these techniques, you'll be creating professional-quality fantasy art that captivates audiences and tells compelling stories.
+Achieving the cyberpunk look is about combining futuristic elements with practical wearability. Start with basics and gradually add more statement pieces as you develop your personal cyber style.
 
-Remember: The best AI art comes from the perfect blend of technical knowledge and creative vision.`,
-  category: 'Tutorials',
-  tags: ['AI Art', 'Fantasy', 'Digital Painting', 'Prompts', 'Tutorial'],
+Remember: confidence is your best accessory in any cyberpunk outfit!`,
+  category: 'Fashion',
+  tags: ['Fashion', 'Cyberpunk', 'Style Guide', 'Shopping'],
   author: {
-    id: 1,
-    name: 'Elena Rodriguez',
-    bio: 'Professional digital artist with 8+ years experience in fantasy art and AI-assisted creation. Elena specializes in creating ethereal fantasy worlds and has worked with major gaming companies on concept art.',
-    avatar: 'https://picsum.photos/64/64?random=1',
+    id: 2,
+    name: 'Neon Styles',
+    bio: 'Fashion stylist and trend forecaster specializing in alternative and futuristic fashion. Neon has styled for major fashion weeks and cyberpunk events worldwide.',
+    avatar: 'https://picsum.photos/64/64?random=2',
     social: {
-      twitter: '@elena_creates',
-      instagram: '@elenadigitalart',
-      website: 'https://elenarodriguez.art'
-    },
-    stats: {
-      followers: 45200,
-      articles: 28,
-      likes: 12400
+      instagram: '@neonstyles_fashion',
+      tiktok: '@neonstyles',
+      website: 'https://neonstyles.fashion'
     }
   },
-  publishedAt: '2024-03-15T10:00:00Z',
-  updatedAt: '2024-03-16T14:30:00Z',
-  readTime: 12,
-  views: 15420,
-  likes: 342,
-  bookmarks: 89,
-  comments: 47,
+  publishedAt: '2025-01-14T14:30:00Z',
+  updatedAt: '2025-01-14T16:15:00Z',
+  readTime: 8,
+  views: 8920,
+  likes: 156,
+  bookmarks: 42,
+  comments: 28,
   featured: true,
-  coverImage: 'https://picsum.photos/1920/1080?random=1',
+  coverImage: 'https://picsum.photos/1920/1080?random=2',
   gallery: [
     {
       id: 1,
-      url: 'https://picsum.photos/800/600?random=10',
-      caption: 'Example of AI-generated fantasy landscape using advanced prompting techniques',
-      alt: 'Fantasy landscape with floating islands and mystical fog'
+      url: 'https://picsum.photos/800/600?random=20',
+      caption: 'Essential cyberpunk color palette and styling examples',
+      alt: 'Cyberpunk fashion color palette'
     },
     {
       id: 2,
-      url: 'https://picsum.photos/800/600?random=11',
-      caption: 'Character design showing the evolution from basic to detailed prompts',
-      alt: 'Elven warrior character progression'
-    },
-    {
-      id: 3,
-      url: 'https://picsum.photos/800/600?random=12',
-      caption: 'Before and after post-processing comparison',
-      alt: 'Post-processing enhancement example'
+      url: 'https://picsum.photos/800/600?random=21',
+      caption: 'Tech-wear accessories and LED jewelry showcase',
+      alt: 'Cyberpunk accessories collection'
     }
   ],
-  seoTitle: 'AI Fantasy Art Guide 2024 - Create Stunning Digital Art with AI',
-  seoDescription: 'Master AI fantasy art creation with our comprehensive guide. Learn advanced prompting techniques, composition secrets, and post-processing tips for breathtaking results.',
-  keywords: ['AI art', 'fantasy art', 'digital painting', 'AI prompts', 'digital art tutorial', 'fantasy character design'],
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: 'Ultimate Guide to AI Fantasy Art: From Prompts to Masterpieces',
-    description: 'Comprehensive guide to creating professional fantasy art using AI tools and advanced techniques.',
-    author: {
-      '@type': 'Person',
-      name: 'Elena Rodriguez'
-    },
-    datePublished: '2024-03-15T10:00:00Z',
-    dateModified: '2024-03-16T14:30:00Z'
-  }
+  seoTitle: 'Cyberpunk Fashion Guide 2025 - Get the Future Look',
+  seoDescription: 'Transform cyberpunk AI art into real fashion. Shopping guide, styling tips, and where to buy cyberpunk clothing.',
+  keywords: ['cyberpunk fashion', 'futuristic clothing', 'cyberpunk style', 'alternative fashion']
 };
 
 const relatedArticles = [
   {
-    id: 2,
-    slug: 'cyberpunk-fashion-trends-2024',
-    title: 'Cyberpunk Fashion Trends Taking Over 2024',
-    excerpt: 'Explore the fusion of technology and style in modern fashion.',
-    coverImage: 'https://picsum.photos/400/300?random=2',
-    category: 'Fashion',
-    readTime: 8,
-    views: 8730,
-    likes: 198,
-    publishedAt: '2024-03-12',
+    id: 1,
+    slug: 'ultimate-ai-fantasy-art-guide',
+    title: 'Ultimate Guide to AI Fantasy Art: From Prompts to Masterpieces',
+    excerpt: 'Master the art of AI-generated fantasy characters with our comprehensive guide.',
+    coverImage: 'https://picsum.photos/400/300?random=1',
+    category: 'Tutorials',
+    readTime: 12,
+    views: 15420,
+    likes: 234,
+    publishedAt: '2025-01-15',
     author: {
-      name: 'Marcus Chen',
-      avatar: 'https://picsum.photos/40/40?random=2'
+      name: 'Luna Starweaver',
+      avatar: 'https://picsum.photos/40/40?random=1'
     }
   },
   {
     id: 3,
-    slug: 'nft-art-business-strategies',
-    title: 'NFT Art Business: Strategies That Actually Work',
-    excerpt: 'Navigate the evolving NFT landscape with proven strategies.',
+    slug: 'artist-spotlight-digital-masters',
+    title: 'Artist Spotlight: Meet the Digital Art Masters Shaping AI',
+    excerpt: 'Exclusive interviews with top digital artists shaping the AI art landscape.',
     coverImage: 'https://picsum.photos/400/300?random=3',
-    category: 'Business',
-    readTime: 15,
-    views: 12200,
-    likes: 267,
-    publishedAt: '2024-03-10',
-    author: {
-      name: 'Sarah Kim',
-      avatar: 'https://picsum.photos/40/40?random=3'
-    }
-  },
-  {
-    id: 4,
-    slug: 'spotlight-emerging-digital-artist-alex-nova',
-    title: 'Artist Spotlight: Alex Nova\'s Digital Surrealism',
-    excerpt: 'Meet the visionary artist behind the viral "Digital Dreams" series.',
-    coverImage: 'https://picsum.photos/400/300?random=4',
     category: 'Artists',
-    readTime: 10,
-    views: 6840,
-    likes: 156,
-    publishedAt: '2024-03-08',
+    readTime: 15,
+    views: 12340,
+    likes: 189,
+    publishedAt: '2025-01-13',
     author: {
-      name: 'David Martinez',
-      avatar: 'https://picsum.photos/40/40?random=4'
+      name: 'Art Curator',
+      avatar: 'https://picsum.photos/40/40?random=3'
     }
   }
 ];
 
 export default function ArticlePage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  
-  // Find the article by slug
-  const article = mockArticle;
-  
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -203,8 +205,7 @@ export default function ArticlePage() {
 
   const handleShare = async (platform?: string) => {
     const url = window.location.href;
-    const title = article.title;
-    const text = article.excerpt;
+    const title = mockArticle.title;
 
     if (platform === 'copy') {
       navigator.clipboard.writeText(url);
@@ -222,15 +223,9 @@ export default function ArticlePage() {
       return;
     }
 
-    if (platform === 'linkedin') {
-      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
-      return;
-    }
-
-    // Native share API fallback
     if (navigator.share) {
       try {
-        await navigator.share({ title, text, url });
+        await navigator.share({ title, url });
       } catch (err) {
         console.log('Error sharing:', err);
       }
@@ -260,48 +255,48 @@ export default function ArticlePage() {
             <ChevronRight className="w-4 h-4" />
             <a href="/blog" className="hover:text-white transition-colors">Blog</a>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-purple-400 capitalize">{article.category}</span>
+            <span className="text-purple-400 capitalize">{mockArticle.category}</span>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-gray-300 truncate">{article.title}</span>
+            <span className="text-gray-300 truncate">{mockArticle.title}</span>
           </div>
         </div>
       </nav>
 
       {/* Article Header */}
-      <header className="py-16 bg-gradient-to-br from-purple-900/20 to-pink-900/20">
+      <header className="py-16 bg-gradient-to-br from-pink-900/20 to-purple-900/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 mb-8">
-              <Tag className="w-5 h-5 text-purple-400 mr-3" />
-              <span className="text-purple-300 font-semibold capitalize">{article.category}</span>
+            <div className="inline-flex items-center bg-pink-500/10 border border-pink-500/20 rounded-full px-6 py-3 mb-8">
+              <Tag className="w-5 h-5 text-pink-400 mr-3" />
+              <span className="text-pink-300 font-semibold capitalize">{mockArticle.category}</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              {article.title}
+              {mockArticle.title}
             </h1>
             
             <p className="text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-              {article.excerpt}
+              {mockArticle.excerpt}
             </p>
 
             {/* Article Meta */}
             <div className="flex flex-wrap items-center justify-center gap-8 text-gray-400 mb-12">
               <div className="flex items-center">
                 <img
-                  src={article.author.avatar}
-                  alt={article.author.name}
+                  src={mockArticle.author.avatar}
+                  alt={mockArticle.author.name}
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div className="text-left">
-                  <p className="text-white font-bold text-lg">{article.author.name}</p>
-                  <p className="text-gray-400">Author</p>
+                  <p className="text-white font-bold text-lg">{mockArticle.author.name}</p>
+                  <p className="text-gray-400">Fashion Stylist</p>
                 </div>
               </div>
               
               <div className="flex items-center">
                 <Calendar className="w-6 h-6 mr-3" />
                 <div className="text-left">
-                  <p className="text-white font-semibold">{formatDate(article.publishedAt)}</p>
+                  <p className="text-white font-semibold">{formatDate(mockArticle.publishedAt)}</p>
                   <p className="text-gray-400">Published</p>
                 </div>
               </div>
@@ -309,7 +304,7 @@ export default function ArticlePage() {
               <div className="flex items-center">
                 <Clock className="w-6 h-6 mr-3" />
                 <div className="text-left">
-                  <p className="text-white font-semibold">{article.readTime} min</p>
+                  <p className="text-white font-semibold">{mockArticle.readTime} min</p>
                   <p className="text-gray-400">Read time</p>
                 </div>
               </div>
@@ -317,7 +312,7 @@ export default function ArticlePage() {
               <div className="flex items-center">
                 <Eye className="w-6 h-6 mr-3" />
                 <div className="text-left">
-                  <p className="text-white font-semibold">{formatNumber(article.views)}</p>
+                  <p className="text-white font-semibold">{formatNumber(mockArticle.views)}</p>
                   <p className="text-gray-400">Views</p>
                 </div>
               </div>
@@ -334,7 +329,7 @@ export default function ArticlePage() {
                 }`}
               >
                 <Heart className={`w-6 h-6 mr-3 ${isLiked ? 'fill-current' : ''}`} />
-                {formatNumber(article.likes + (isLiked ? 1 : 0))} Likes
+                {formatNumber(mockArticle.likes + (isLiked ? 1 : 0))} Likes
               </button>
               
               <button
@@ -374,12 +369,6 @@ export default function ArticlePage() {
                         <Facebook className="w-5 h-5 text-white" />
                       </button>
                       <button
-                        onClick={() => handleShare('linkedin')}
-                        className="p-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
-                      >
-                        <Linkedin className="w-5 h-5 text-white" />
-                      </button>
-                      <button
                         onClick={() => handleShare('copy')}
                         className="p-3 bg-gray-600 rounded-lg hover:bg-gray-700 transition-colors"
                       >
@@ -398,8 +387,8 @@ export default function ArticlePage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src={article.coverImage}
-            alt={article.title}
+            src={mockArticle.coverImage}
+            alt={mockArticle.title}
             className="w-full h-96 md:h-[600px] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -420,33 +409,14 @@ export default function ArticlePage() {
                 prose-ul:text-gray-300 prose-li:mb-3 prose-li:text-lg
                 prose-strong:text-white prose-strong:font-semibold
                 prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300"
-              dangerouslySetInnerHTML={{ __html: article.content }}
+              dangerouslySetInnerHTML={{ __html: mockArticle.content }}
             />
-
-            {/* Article Gallery */}
-            {article.gallery && article.gallery.length > 0 && (
-              <section className="my-16">
-                <h3 className="text-3xl font-bold text-white mb-8">Featured Artwork Examples</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {article.gallery.map((image, index) => (
-                    <div key={index} className="relative rounded-2xl overflow-hidden group">
-                      <img
-                        src={image.url}
-                        alt={image.alt}
-                        className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-500" />
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
 
             {/* Tags */}
             <div className="my-16">
               <h3 className="text-2xl font-bold text-white mb-6">Article Tags</h3>
               <div className="flex flex-wrap gap-4">
-                {article.tags.map((tag) => (
+                {mockArticle.tags.map((tag) => (
                   <span
                     key={tag}
                     className="bg-gray-800 border border-gray-600 text-gray-300 px-4 py-3 rounded-xl hover:border-purple-500 hover:text-purple-400 transition-all duration-300 cursor-pointer font-medium"
@@ -458,30 +428,20 @@ export default function ArticlePage() {
             </div>
 
             {/* Author Bio */}
-            <div className="bg-gradient-to-r from-purple-900/20 to-pink-900/20 border border-gray-700 rounded-3xl p-10 my-16">
+            <div className="bg-gradient-to-r from-pink-900/20 to-purple-900/20 border border-gray-700 rounded-3xl p-10 my-16">
               <div className="flex items-start space-x-8">
                 <img
-                  src={article.author.avatar}
-                  alt={article.author.name}
+                  src={mockArticle.author.avatar}
+                  alt={mockArticle.author.name}
                   className="w-24 h-24 rounded-full"
                 />
                 <div className="flex-1">
-                  <h3 className="text-3xl font-bold text-white mb-4">{article.author.name}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed text-lg">{article.author.bio}</p>
+                  <h3 className="text-3xl font-bold text-white mb-4">{mockArticle.author.name}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed text-lg">{mockArticle.author.bio}</p>
                   <div className="flex space-x-6">
-                    {article.author.social.twitter && (
+                    {mockArticle.author.social.instagram && (
                       <a 
-                        href={`https://twitter.com/${article.author.social.twitter.replace('@', '')}`} 
-                        className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Twitter
-                      </a>
-                    )}
-                    {article.author.social.instagram && (
-                      <a 
-                        href={`https://instagram.com/${article.author.social.instagram.replace('@', '')}`}
+                        href={`https://instagram.com/${mockArticle.author.social.instagram.replace('@', '')}`}
                         className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -489,14 +449,14 @@ export default function ArticlePage() {
                         Instagram
                       </a>
                     )}
-                    {article.author.social.website && (
+                    {mockArticle.author.social.tiktok && (
                       <a 
-                        href={`https://${article.author.social.website}`}
+                        href={`https://tiktok.com/${mockArticle.author.social.tiktok.replace('@', '')}`}
                         className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Website
+                        TikTok
                       </a>
                     )}
                   </div>
@@ -508,21 +468,6 @@ export default function ArticlePage() {
           {/* Sidebar */}
           <aside className="lg:col-span-1">
             <div className="sticky top-8 space-y-8">
-              {/* Table of Contents */}
-              <div className="bg-gray-900/50 border border-gray-700 rounded-2xl p-6">
-                <h4 className="text-white font-bold mb-4 flex items-center">
-                  <BookmarkPlus className="w-5 h-5 mr-2" />
-                  Table of Contents
-                </h4>
-                <ul className="space-y-3 text-sm">
-                  <li><a href="#introduction" className="text-gray-400 hover:text-purple-400 transition-colors">Introduction to AI Fantasy Art</a></li>
-                  <li><a href="#prompts" className="text-gray-400 hover:text-purple-400 transition-colors">Understanding AI Art Prompts</a></li>
-                  <li><a href="#advanced" className="text-gray-400 hover:text-purple-400 transition-colors">Advanced Prompting Techniques</a></li>
-                  <li><a href="#styles" className="text-gray-400 hover:text-purple-400 transition-colors">Popular Fantasy Art Styles</a></li>
-                  <li><a href="#commercial" className="text-gray-400 hover:text-purple-400 transition-colors">Tips for Commercial Success</a></li>
-                </ul>
-              </div>
-
               {/* Article Stats */}
               <div className="bg-gray-900/50 border border-gray-700 rounded-2xl p-6">
                 <h4 className="text-white font-bold mb-4 flex items-center">
@@ -532,19 +477,19 @@ export default function ArticlePage() {
                 <div className="space-y-4">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Views</span>
-                    <span className="text-white font-semibold">{formatNumber(article.views)}</span>
+                    <span className="text-white font-semibold">{formatNumber(mockArticle.views)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Likes</span>
-                    <span className="text-white font-semibold">{formatNumber(article.likes)}</span>
+                    <span className="text-white font-semibold">{formatNumber(mockArticle.likes)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Bookmarks</span>
-                    <span className="text-white font-semibold">{formatNumber(article.bookmarks)}</span>
+                    <span className="text-white font-semibold">{formatNumber(mockArticle.bookmarks)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Comments</span>
-                    <span className="text-white font-semibold">{article.comments}</span>
+                    <span className="text-white font-semibold">{mockArticle.comments}</span>
                   </div>
                 </div>
               </div>
@@ -557,7 +502,7 @@ export default function ArticlePage() {
       <section className="py-20 bg-gray-900/30 mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">Related Articles</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {relatedArticles.map((relatedArticle) => (
               <article
                 key={relatedArticle.id}

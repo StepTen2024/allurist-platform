@@ -59,6 +59,9 @@ export default function Navigation({ user, onAuth, onLogout, onShowAuthModal, on
               <a href="/gallery" className="text-white hover:text-pink-400 transition-colors">
                 Gallery
               </a>
+              <a href="/blog" className="text-white hover:text-pink-400 transition-colors">
+                Blog
+              </a>
               <a href="#style" className="text-gray-300 hover:text-pink-500 transition-colors font-medium">
                 Style
               </a>
@@ -184,6 +187,9 @@ export default function Navigation({ user, onAuth, onLogout, onShowAuthModal, on
               </a>
               <a href="/gallery" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
                 Gallery
+              </a>
+              <a href="/blog" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
+                Blog
               </a>
               <a href="#pricing" className="text-white hover:text-pink-400 block px-3 py-2 rounded-md text-base font-medium">
                 Pricing

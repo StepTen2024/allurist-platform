@@ -16,7 +16,7 @@ const mockArticles = [
     author: {
       id: 1,
       name: 'Luna Starweaver',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=1',
       bio: 'Professional AI Artist & Tutorial Creator'
     },
     publishedAt: '2025-01-15T10:00:00Z',
@@ -24,7 +24,7 @@ const mockArticles = [
     views: 15420,
     likes: 234,
     featured: true,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=1',
     seoTitle: 'AI Fantasy Art Guide 2025 - Master Prompts & Techniques',
     seoDescription: 'Learn AI fantasy art creation with our ultimate guide. Master prompts, styles, and techniques for stunning fantasy characters.',
     keywords: ['AI art', 'fantasy art', 'AI prompts', 'digital art tutorial']
@@ -40,7 +40,7 @@ const mockArticles = [
     author: {
       id: 2,
       name: 'Neon Styles',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=2',
       bio: 'Fashion Stylist & Trend Forecaster'
     },
     publishedAt: '2025-01-14T14:30:00Z',
@@ -48,7 +48,7 @@ const mockArticles = [
     views: 8920,
     likes: 156,
     featured: true,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=2',
     seoTitle: 'Cyberpunk Fashion Guide 2025 - Get the Future Look',
     seoDescription: 'Transform cyberpunk AI art into real fashion. Shopping guide, styling tips, and where to buy cyberpunk clothing.',
     keywords: ['cyberpunk fashion', 'futuristic clothing', 'cyberpunk style', 'alternative fashion']
@@ -64,7 +64,7 @@ const mockArticles = [
     author: {
       id: 3,
       name: 'Art Curator',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=3',
       bio: 'Digital Art Historian & Curator'
     },
     publishedAt: '2025-01-13T09:15:00Z',
@@ -72,7 +72,7 @@ const mockArticles = [
     views: 12340,
     likes: 189,
     featured: false,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=3',
     seoTitle: 'Digital Art Masters - Artist Interviews & Insights',
     seoDescription: 'Meet leading digital artists. Exclusive interviews, creative processes, and insights into the AI art revolution.',
     keywords: ['digital artists', 'AI art interviews', 'artist spotlight', 'creative process']
@@ -88,7 +88,7 @@ const mockArticles = [
     author: {
       id: 4,
       name: 'Business Pro',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=4',
       bio: 'Digital Art Business Consultant'
     },
     publishedAt: '2025-01-12T16:45:00Z',
@@ -96,7 +96,7 @@ const mockArticles = [
     views: 9870,
     likes: 267,
     featured: false,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=4',
     seoTitle: 'Monetize AI Art 2025 - Complete Business Guide',
     seoDescription: 'Turn AI art into income. Complete guide to selling, licensing, and building a profitable AI art business in 2025.',
     keywords: ['AI art business', 'monetize digital art', 'sell AI art', 'art business guide']
@@ -107,12 +107,12 @@ const mockArticles = [
     title: 'Fantasy Hair Colors: A Complete Guide to Magical Transformations',
     excerpt: 'Discover how to achieve stunning fantasy hair colors inspired by AI art, from rainbow gradients to ethereal pastels.',
     content: 'Full article content...',
-    category: 'fashion',
+    category: 'Fashion',
     tags: ['Hair', 'Fantasy', 'Color', 'Style'],
     author: {
       id: 2,
       name: 'Neon Styles',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=5',
       bio: 'Fashion Stylist & Trend Forecaster'
     },
     publishedAt: '2025-01-11T12:00:00Z',
@@ -120,7 +120,7 @@ const mockArticles = [
     views: 7650,
     likes: 198,
     featured: false,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=5',
     seoTitle: 'Fantasy Hair Colors Guide - Magical Hair Transformations',
     seoDescription: 'Complete guide to fantasy hair colors inspired by AI art. Tips, techniques, and products for magical hair transformations.',
     keywords: ['fantasy hair', 'colorful hair', 'hair dye', 'fantasy style']
@@ -131,12 +131,12 @@ const mockArticles = [
     title: 'AI Art Copyright: What You Need to Know in 2025',
     excerpt: 'Navigate the complex world of AI art copyright with our comprehensive legal guide for digital artists.',
     content: 'Full article content...',
-    category: 'business',
+    category: 'Business',
     tags: ['Copyright', 'Legal', 'AI Art', 'Business'],
     author: {
       id: 4,
       name: 'Business Pro',
-      avatar: '/api/placeholder/40/40',
+      avatar: 'https://picsum.photos/40/40?random=6',
       bio: 'Digital Art Business Consultant'
     },
     publishedAt: '2025-01-10T14:20:00Z',
@@ -144,7 +144,7 @@ const mockArticles = [
     views: 6890,
     likes: 134,
     featured: false,
-    coverImage: '/api/placeholder/800/400',
+    coverImage: 'https://picsum.photos/800/400?random=6',
     seoTitle: 'AI Art Copyright Guide 2025 - Legal Rights & Protection',
     seoDescription: 'Complete guide to AI art copyright. Legal rights, protection strategies, and what every digital artist needs to know.',
     keywords: ['AI art copyright', 'digital art legal', 'art copyright protection', 'AI art rights']
@@ -228,7 +228,7 @@ export default function BlogPage() {
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-900/20 to-pink-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://picsum.photos/1920/1080?random=100')] bg-cover bg-center opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3 mb-8">
@@ -388,51 +388,53 @@ export default function BlogPage() {
                   key={article.id}
                   className={`group cursor-pointer ${index === 0 ? 'lg:col-span-2' : ''}`}
                 >
-                  <div className="bg-gray-900/50 border border-gray-700 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 transform hover:scale-[1.02]">
-                    <div className={`relative ${index === 0 ? 'h-96' : 'h-80'}`}>
-                      <img
-                        src={article.coverImage}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                      <div className="absolute top-6 left-6">
-                        <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold capitalize">
-                          {article.category}
-                        </span>
-                      </div>
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <h3 className={`text-white font-bold mb-4 group-hover:text-purple-300 transition-colors line-clamp-2 ${
-                          index === 0 ? 'text-3xl md:text-4xl' : 'text-2xl'
-                        }`}>
-                          {article.title}
-                        </h3>
-                        <p className="text-gray-300 mb-6 line-clamp-2 text-lg">
-                          {article.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-6 text-gray-400">
-                            <div className="flex items-center">
-                              <User className="w-5 h-5 mr-2" />
-                              <span className="font-medium">{article.author.name}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <Clock className="w-5 h-5 mr-2" />
-                              <span>{article.readTime}m read</span>
-                            </div>
-                            <div className="flex items-center">
-                              <Eye className="w-5 h-5 mr-2" />
-                              <span>{formatNumber(article.views)}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <Heart className="w-5 h-5 mr-2" />
-                              <span>{formatNumber(article.likes)}</span>
+                  <a href={`/blog/${article.slug}`} className="block">
+                    <div className="bg-gray-900/50 border border-gray-700 rounded-3xl overflow-hidden hover:border-purple-500/50 transition-all duration-500 transform hover:scale-[1.02]">
+                      <div className={`relative ${index === 0 ? 'h-96' : 'h-80'}`}>
+                        <img
+                          src={article.coverImage}
+                          alt={article.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                        <div className="absolute top-6 left-6">
+                          <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold capitalize">
+                            {article.category}
+                          </span>
+                        </div>
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <h3 className={`text-white font-bold mb-4 group-hover:text-purple-300 transition-colors line-clamp-2 ${
+                            index === 0 ? 'text-3xl md:text-4xl' : 'text-2xl'
+                          }`}>
+                            {article.title}
+                          </h3>
+                          <p className="text-gray-300 mb-6 line-clamp-2 text-lg">
+                            {article.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-6 text-gray-400">
+                              <div className="flex items-center">
+                                <User className="w-5 h-5 mr-2" />
+                                <span className="font-medium">{article.author.name}</span>
+                              </div>
+                              <div className="flex items-center">
+                                <Clock className="w-5 h-5 mr-2" />
+                                <span>{article.readTime}m read</span>
+                              </div>
+                              <div className="flex items-center">
+                                <Eye className="w-5 h-5 mr-2" />
+                                <span>{formatNumber(article.views)}</span>
+                              </div>
+                              <div className="flex items-center">
+                                <Heart className="w-5 h-5 mr-2" />
+                                <span>{formatNumber(article.likes)}</span>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </article>
               ))}
             </div>
@@ -460,62 +462,64 @@ export default function BlogPage() {
                 key={article.id}
                 className="group cursor-pointer"
               >
-                <div className="bg-gray-900/50 border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
-                  <div className="relative h-56">
-                    <img
-                      src={article.coverImage}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-purple-500 text-white px-3 py-1 rounded-lg text-sm font-bold capitalize">
-                        {article.category}
-                      </span>
+                <a href={`/blog/${article.slug}`} className="block">
+                  <div className="bg-gray-900/50 border border-gray-700 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div className="relative h-56">
+                      <img
+                        src={article.coverImage}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-purple-500 text-white px-3 py-1 rounded-lg text-sm font-bold capitalize">
+                          {article.category}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6 line-clamp-3 leading-relaxed">
-                      {article.excerpt}
-                    </p>
                     
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center">
-                        <img
-                          src={article.author.avatar}
-                          alt={article.author.name}
-                          className="w-10 h-10 rounded-full mr-4"
-                        />
-                        <div>
-                          <p className="text-white font-semibold">{article.author.name}</p>
-                          <p className="text-gray-500 text-sm">{formatDate(article.publishedAt)}</p>
+                    <div className="p-8">
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors line-clamp-2">
+                        {article.title}
+                      </h3>
+                      <p className="text-gray-400 mb-6 line-clamp-3 leading-relaxed">
+                        {article.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center">
+                          <img
+                            src={article.author.avatar}
+                            alt={article.author.name}
+                            className="w-10 h-10 rounded-full mr-4"
+                          />
+                          <div>
+                            <p className="text-white font-semibold">{article.author.name}</p>
+                            <p className="text-gray-500 text-sm">{formatDate(article.publishedAt)}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between text-sm text-gray-500">
-                      <div className="flex items-center space-x-4">
-                        <span className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {article.readTime}m
-                        </span>
-                        <span className="flex items-center">
-                          <Eye className="w-4 h-4 mr-1" />
-                          {formatNumber(article.views)}
-                        </span>
-                        <span className="flex items-center">
-                          <Heart className="w-4 h-4 mr-1" />
-                          {formatNumber(article.likes)}
-                        </span>
+                      
+                      <div className="flex items-center justify-between text-sm text-gray-500">
+                        <div className="flex items-center space-x-4">
+                          <span className="flex items-center">
+                            <Clock className="w-4 h-4 mr-1" />
+                            {article.readTime}m
+                          </span>
+                          <span className="flex items-center">
+                            <Eye className="w-4 h-4 mr-1" />
+                            {formatNumber(article.views)}
+                          </span>
+                          <span className="flex items-center">
+                            <Heart className="w-4 h-4 mr-1" />
+                            {formatNumber(article.likes)}
+                          </span>
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-purple-400 group-hover:translate-x-2 transition-transform" />
                       </div>
-                      <ArrowRight className="w-5 h-5 text-purple-400 group-hover:translate-x-2 transition-transform" />
                     </div>
                   </div>
-                </div>
+                </a>
               </article>
             ))}
           </div>
