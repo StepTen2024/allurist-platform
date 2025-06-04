@@ -4,6 +4,8 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import GalleryGrid from '@/components/GalleryGrid';
 import PricingSection from '@/components/PricingSection';
+import AuthModal from '@/components/AuthModal';
+import UserDashboard from '@/components/UserDashboard';
 
 // Mock user data - will be replaced with real auth
 const mockUser = {
@@ -18,10 +20,17 @@ const mockUser = {
 
 export default function HomePage() {
   const [user, setUser] = useState<typeof mockUser | null>(null);
+  const [authModal, setAuthModal] = useState<{
+    isOpen: boolean;
+    mode: 'signin' | 'signup';
+  }>({
+    isOpen: false,
+    mode: 'signin'
+  });
+  const [showDashboard, setShowDashboard] = useState(false);
 
   const handleAuth = () => {
-    // Mock login - will be replaced with Supabase auth
-    setUser(mockUser);
+    setAuthModal({ isOpen: true, mode: 'signin' });
   };
 
   const handleLogout = () => {
@@ -29,13 +38,19 @@ export default function HomePage() {
   };
 
   const handleJoinVIP = () => {
-    if (user) {
-      // Redirect to dashboard
-      window.location.href = '/dashboard';
-    } else {
-      // Show sign up modal or redirect to auth
-      alert('Sign up flow would trigger here - Supabase auth integration coming next!');
-    }
+    setAuthModal({ isOpen: true, mode: 'signup' });
+  };
+
+  const handleAuthSuccess = (newUser: any) => {
+    setUser(newUser);
+  };
+
+  const handleCloseAuthModal = () => {
+    setAuthModal({ isOpen: false, mode: 'signin' });
+  };
+
+  const handleSwitchAuthMode = (mode: 'signin' | 'signup') => {
+    setAuthModal({ isOpen: true, mode });
   };
 
   const handleSelectPlan = (plan: string) => {
@@ -43,11 +58,31 @@ export default function HomePage() {
     alert(`${plan} plan selected - Stripe checkout integration coming next!`);
   };
 
+  const handleUpgradeClick = (targetTier: string) => {
+    // Handle upgrade clicks from gallery
+    alert(`Upgrade to ${targetTier} plan triggered! Stripe checkout integration coming next.`);
+  };
+
+  const handleShowDashboard = () => {
+    if (user) {
+      setShowDashboard(true);
+    }
+  };
+
   return (
     <div className="bg-black min-h-screen">
-      <Navigation user={user} onAuthClick={handleAuth} onLogout={handleLogout} />
+      <Navigation 
+        user={user} 
+        onAuth={handleAuth} 
+        onLogout={handleLogout} 
+        onShowAuthModal={(mode) => setAuthModal({ isOpen: true, mode })}
+        onShowDashboard={handleShowDashboard}
+      />
       <HeroSection onJoinVIP={handleJoinVIP} />
-      <GalleryGrid userTier={user?.tier || "free"} />
+      <GalleryGrid 
+        userTier={user?.tier || "free"} 
+        onUpgradeClick={handleUpgradeClick}
+      />
       <PricingSection onSelectPlan={handleSelectPlan} />
       
       {/* Footer */}
@@ -64,6 +99,26 @@ export default function HomePage() {
           <p className="text-gray-600 text-sm mt-6">© 2025 Allurist. 18+ Premium fantasy art platform.</p>
         </div>
       </footer>
+
+      <AuthModal
+        isOpen={authModal.isOpen}
+        mode={authModal.mode}
+        onClose={handleCloseAuthModal}
+        onAuthSuccess={handleAuthSuccess}
+        onSwitchMode={handleSwitchAuthMode}
+      />
+
+      {user && (
+        <UserDashboard
+          isOpen={showDashboard}
+          user={user}
+          onClose={() => setShowDashboard(false)}
+          onUpgrade={() => {
+            setShowDashboard(false);
+            setAuthModal({ isOpen: true, mode: 'signup' });
+          }}
+        />
+      )}
     </div>
   );
 }
